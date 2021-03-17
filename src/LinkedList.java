@@ -1,6 +1,6 @@
 public class LinkedList<T> implements List<T> {
     private Node<T> head;
-    private int size;
+    private int size = 0;
 
     @Override
     public boolean isEmpty() {
@@ -26,14 +26,11 @@ public class LinkedList<T> implements List<T> {
             throw new EmptyListException("List is empty");
         }
 
-        if(head == null) {
-            return null;
-        }
-
         Node<T> temp = head;
         head = head.getNext();
+        temp.setNext(null);
         size--;
 
-        return head.getData();
+        return temp.getData();
     }
 }

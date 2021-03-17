@@ -15,11 +15,17 @@ public class LinkedStack<T> implements Stack<T>{
     }
 
     @Override
-    public T pop() throws EmptyListException {
+    public T pop()  {
         if(isEmpty()) {
             throw new EmptyStackException();
         }
 
-        return list.removeFirst();
+        T object = null;
+        try {
+          object = list.removeFirst();
+        } catch (EmptyListException emptyListException) {
+            emptyListException.getMessage();
+        }
+        return object;
     }
 }

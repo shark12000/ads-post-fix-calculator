@@ -1,5 +1,9 @@
 public class Operand extends Token{
-    private int value;
+    private final int value;
+
+    public Operand(int value) {
+        this.value = value;
+    }
 
     public void accept(CalculatorVisitor visitor) {
         visitor.visit(this);
