@@ -37,7 +37,7 @@ class LinkedListTest {
     }
 
     @Test
-    void testExpectedException() throws EmptyListException {
+    void testExpectedException() {
         assertThrows(EmptyListException.class, () -> {
             LinkedList<Integer> linkedList = new LinkedList<>();
             linkedList.removeFirst();

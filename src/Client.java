@@ -5,15 +5,15 @@ public class Client {
     private final CalculatorVisitor calculatorVisitor = new CalculatorVisitor();
 
 
-    public int evaluateExpression(ArrayList<Token> tokenList) {
-        for (Token token: tokenList) {
+    public int evaluateExpression(ArrayList<Token> tokenList) throws MalformedExpressionException {
+        for (Token token : tokenList) {
            token.accept(calculatorVisitor);
         }
 
         return calculatorVisitor.getResult();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MalformedExpressionException {
         Client client = new Client();
 
         ArrayList<Token> tokenArrayList = new ArrayList<>(Arrays.asList(

@@ -19,7 +19,6 @@ public class LinkedStack<T> implements Stack<T>{
         if(isEmpty()) {
             throw new EmptyStackException();
         }
-
         T object = null;
         try {
           object = list.removeFirst();
